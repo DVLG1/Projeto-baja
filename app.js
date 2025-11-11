@@ -1,4 +1,4 @@
-// script.js
+
 
 // Envio do formulário de contato
 const form = document.getElementById("form-contato");
@@ -23,35 +23,38 @@ const calculadorasContainer = document.querySelector(".calculadoras");
 calculadorasContainer.innerHTML = `
   <div class="calc-box">
     <h3>Relação Peso/Potência</h3>
-    <input type="number" id="peso" placeholder="Peso (kg)">
-    <input type="number" id="potencia" placeholder="Potência (kW)">
+    <input type="number" id="peso" placeholder="Peso do Veículo (kg)">
+    <input type="number" id="potencia" placeholder="Potência do Motor (HP)">
     <button onclick="calcPesoPotencia()">Calcular</button>
     <p id="res-peso"></p>
+    <div class="dica"><strong>Dica:</strong> Uma menor relação peso/potência indica melhor desempenho. Valores típicos para Baja SAE: 15–25 kg/HP.</div>
   </div>
 
   <div class="calc-box">
     <h3>Aceleração Média</h3>
-    <input type="number" id="v0" placeholder="Vel. Inicial (km/h)">
-    <input type="number" id="v1" placeholder="Vel. Final (km/h)">
-    <input type="number" id="tempo" placeholder="Tempo (s)">
+    <input type="number" id="v1" placeholder="Velocidade Final (km/h)">
+    <input type="number" id="tempo" placeholder="Tempo (segundos)">
     <button onclick="calcAceleracao()">Calcular</button>
     <p id="res-acel"></p>
+    <div class="dica"><strong>Dica:</strong> Aceleração = (Velocidade Final ÷ Tempo). Quanto maior a aceleração, melhor a performance de largada.</div>
   </div>
 
   <div class="calc-box">
     <h3>Distância de Frenagem</h3>
-    <input type="number" id="velocidade" placeholder="Velocidade (km/h)">
-    <input type="number" id="atrito" placeholder="Atrito (ex: 0.7)">
+    <input type="number" id="velocidade" placeholder="Velocidade Inicial (km/h)">
+    <input type="number" id="atrito" placeholder="Coeficiente de Atrito">
     <button onclick="calcFrenagem()">Calcular</button>
     <p id="res-freio"></p>
+    <div class="dica"><strong>Dica:</strong> Coeficiente de atrito típico: asfalto seco (0.7–0.8), terra (0.5–0.6). Distância = v² ÷ (2 × μ × g).</div>
   </div>
 
   <div class="calc-box">
-    <h3>Torque Motor</h3>
-    <input type="number" id="potMotor" placeholder="Potência (kW)">
+    <h3>Torque (Potência × RPM)</h3>
+    <input type="number" id="potMotor" placeholder="Potência (HP)">
     <input type="number" id="rpm" placeholder="RPM">
     <button onclick="calcTorque()">Calcular</button>
     <p id="res-torque"></p>
+    <div class="dica"><strong>Dica:</strong> Torque (N·m) = (Potência × 5252) ÷ RPM. O torque máximo geralmente ocorre em rotações mais baixas.</div>
   </div>
 
   <div class="calc-box">
@@ -61,6 +64,7 @@ calculadorasContainer.innerHTML = `
     <input type="number" id="raioRoda" placeholder="Raio da Roda (metros)">
     <button onclick="calcVelocidadeFinal()">Calcular</button>
     <p id="res-velocidade"></p>
+    <div class="dica"><strong>Dica:</strong> Velocidade (km/h) = (RPM × 2π × Raio) ÷ (Relação × 60 × 1000) × 3.6. Considere o raio dinâmico do pneu.</div>
   </div>
 
   <div class="calc-box">
@@ -69,8 +73,10 @@ calculadorasContainer.innerHTML = `
     <input type="number" id="consumoComb" placeholder="Consumo Médio (km/L)">
     <button onclick="calcConsumoCombustivel()">Calcular</button>
     <p id="res-combustivel"></p>
+    <div class="dica"><strong>Dica:</strong> Litros = Distância ÷ Consumo. O consumo do Baja varia muito conforme terreno e estilo de pilotagem.</div>
   </div>
 `;
+
 
 function calcPesoPotencia() {
   const peso = parseFloat(document.getElementById("peso").value);
