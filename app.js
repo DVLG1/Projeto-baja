@@ -18,7 +18,6 @@ form.addEventListener("submit", function (e) {
 
 // ====== CALCULADORAS ======
 
-// Gerar dinamicamente as calculadoras dentro da <div class="calculadoras"></div>
 const calculadorasContainer = document.querySelector(".calculadoras");
 
 calculadorasContainer.innerHTML = `
@@ -29,6 +28,7 @@ calculadorasContainer.innerHTML = `
     <button onclick="calcPesoPotencia()">Calcular</button>
     <p id="res-peso"></p>
   </div>
+
   <div class="calc-box">
     <h3>Aceleração Média</h3>
     <input type="number" id="v0" placeholder="Vel. Inicial (km/h)">
@@ -37,13 +37,7 @@ calculadorasContainer.innerHTML = `
     <button onclick="calcAceleracao()">Calcular</button>
     <p id="res-acel"></p>
   </div>
-  <div class="calc-box">
-    <h3>Autonomia Elétrica</h3>
-    <input type="number" id="bateria" placeholder="Capacidade (kWh)">
-    <input type="number" id="consumo" placeholder="Consumo (kWh/km)">
-    <button onclick="calcAutonomia()">Calcular</button>
-    <p id="res-auto"></p>
-  </div>
+
   <div class="calc-box">
     <h3>Distância de Frenagem</h3>
     <input type="number" id="velocidade" placeholder="Velocidade (km/h)">
@@ -51,12 +45,30 @@ calculadorasContainer.innerHTML = `
     <button onclick="calcFrenagem()">Calcular</button>
     <p id="res-freio"></p>
   </div>
+
   <div class="calc-box">
     <h3>Torque Motor</h3>
     <input type="number" id="potMotor" placeholder="Potência (kW)">
     <input type="number" id="rpm" placeholder="RPM">
     <button onclick="calcTorque()">Calcular</button>
     <p id="res-torque"></p>
+  </div>
+
+  <div class="calc-box">
+    <h3>Velocidade Final Estimada</h3>
+    <input type="number" id="rpmMax" placeholder="RPM Máximo">
+    <input type="number" id="relacaoFinal" placeholder="Relação Final">
+    <input type="number" id="raioRoda" placeholder="Raio da Roda (metros)">
+    <button onclick="calcVelocidadeFinal()">Calcular</button>
+    <p id="res-velocidade"></p>
+  </div>
+
+  <div class="calc-box">
+    <h3>Consumo de Combustível</h3>
+    <input type="number" id="distanciaComb" placeholder="Distância (km)">
+    <input type="number" id="consumoComb" placeholder="Consumo Médio (km/L)">
+    <button onclick="calcConsumoCombustivel()">Calcular</button>
+    <p id="res-combustivel"></p>
   </div>
 `;
 
@@ -85,15 +97,30 @@ function calcAceleracao() {
   }
 }
 
-function calcAutonomia() {
-  const bat = parseFloat(document.getElementById("bateria").value);
-  const cons = parseFloat(document.getElementById("consumo").value);
-  const res = document.getElementById("res-auto");
-  if (bat && cons) {
-    const auto = (bat / cons).toFixed(1);
-    res.textContent = `Autonomia: ${auto} km`;
+function calcVelocidadeFinal() {
+  const rpm = parseFloat(document.getElementById("rpmMax").value);
+  const relacao = parseFloat(document.getElementById("relacaoFinal").value);
+  const raio = parseFloat(document.getElementById("raioRoda").value);
+  const res = document.getElementById("res-velocidade");
+
+  if (rpm && relacao && raio) {
+    const velocidade = ((rpm * 2 * Math.PI * raio) / (relacao * 60)) * 3.6;
+    res.textContent = `Velocidade Estimada: ${velocidade.toFixed(2)} km/h`;
   } else {
-    res.textContent = "Insira os dados corretamente.";
+    res.textContent = "Insira todos os valores corretamente.";
+  }
+}
+
+function calcConsumoCombustivel() {
+  const distancia = parseFloat(document.getElementById("distanciaComb").value);
+  const consumo = parseFloat(document.getElementById("consumoComb").value);
+  const res = document.getElementById("res-combustivel");
+
+  if (distancia && consumo) {
+    const litros = distancia / consumo;
+    res.textContent = `Consumo: ${litros.toFixed(2)} litros`;
+  } else {
+    res.textContent = "Preencha corretamente.";
   }
 }
 
@@ -120,14 +147,13 @@ function calcTorque() {
   } else {
     res.textContent = "Preencha corretamente.";
   }
-
 }
 
 new Swiper('.galeria-swiper', {
   slidesPerView: 3,
   spaceBetween: 20,
   loop: true,
-  loopedSlides: 6, // coloque o número exato de slides únicos que você tem
+  loopedSlides: 6,
   autoplay: {
     delay: 4000,
     disableOnInteraction: true,
