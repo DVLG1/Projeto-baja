@@ -123,20 +123,21 @@ function calcTorque() {
 
 }
 
-new Swiper(".galeria-swiper", {
+new Swiper('.galeria-swiper', {
   slidesPerView: 3,
   spaceBetween: 20,
   loop: true,
+  loopedSlides: 6, // coloque o número exato de slides únicos que você tem
   autoplay: {
     delay: 4000,
-    disableOnInteraction: false,
+    disableOnInteraction: true,
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
   pagination: {
-    el: ".swiper-pagination",
+    el: '.swiper-pagination',
     clickable: true,
   },
   breakpoints: {
