@@ -7,30 +7,28 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <script defer src="app.js"></script>
-  <!-- Swiper CSS -->
-
 </head>
 <body>
-  <!-- Header -->
-<header>
-  <div class="logo">
-    <div class="logo-text">
-      <h1>Baja Hub</h1>
-      <span>UniCuritiba</span>
-    </div>
-    <img src="images/logo6pronto.png" alt="Baja Hub UniCuritiba Logo" class="logo-img">
-  </div>
-  <nav>
-    <ul>
-      <li><a href="#inicio">Home</a></li>
-      <li><a href="#ferramentas">Ferramentas</a></li>
-      <li><a href="#galeria">Galeria</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-  </nav>
-</header>
 
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <div class="logo-text">
+        <h1>Baja Hub</h1>
+        <span>UniCuritiba</span>
+      </div>
+      <img src="images/logo6pronto.png" alt="Baja Hub UniCuritiba Logo" class="logo-img">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Home</a></li>
+        <li><a href="#ferramentas">Ferramentas</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- Hero Section -->
   <section id="hero" class="hero">
@@ -43,77 +41,82 @@
 
   <!-- O que é o Projeto Baja -->
   <section id="sobre-baja" class="info-section">
-    <h2>O que é o Projeto Baja SAE?</h2>
-    <p>O Baja SAE é uma competição estudantil organizada pela SAE Brasil onde equipes universitárias projetam, constroem e competem com um protótipo de carro off-road. O projeto exige aplicação real de conhecimentos de engenharia, trabalho em equipe e inovação, passando por etapas como aceleração, frenagem, tração, e resistência.</p>
+    <div class="container">
+      <h2>O que é o Projeto Baja SAE?</h2>
+      <p>O Baja SAE é uma competição estudantil organizada pela SAE Brasil onde equipes universitárias projetam, constroem e competem com um protótipo de carro off-road. O projeto exige aplicação real de conhecimentos de engenharia, trabalho em equipe e inovação, passando por etapas como aceleração, frenagem, tração, e resistência.</p>
+      <img src="images/foto-sobre-projeto-baja.png" alt="Equipe trabalhando no carro Baja" style="margin-top: 20px; max-width: 100%; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    </div>
   </section>
 
   <!-- Ferramentas -->
   <section id="ferramentas">
-    <h2>Calculadoras Técnicas</h2>
-    <p>Ferramentas de cálculo essenciais para análise de desempenho de veículos Baja SAE</p>
-    <div class="calculadoras">
-    
+    <div class="container">
+      <h2>Calculadoras Técnicas</h2>
+      <p>Ferramentas de cálculo essenciais para análise de desempenho de veículos Baja SAE</p>
+      <div class="calculadoras"></div>
     </div>
   </section>
 
   <!-- Galeria -->
- <section id="galeria" class="galeria">
-  <h2>Galeria do Projeto</h2>
-  <p>Imagens ilustrativas de protótipos e competições Baja SAE</p>
-
-  <div class="swiper galeria-swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="images/galeria1.png" alt="Carro Baja em corrida com piloto"></div>
-      <div class="swiper-slide"><img src="images/galeria2.png" alt="Baja quase na linha de chegada"></div>
-      <div class="swiper-slide"><img src="images/galeria3.png" alt="Equipe e piloto pós-corrida"></div>
-      <div class="swiper-slide"><img src="images/galeria4.png" alt="Vários carros competindo na pista"></div>
-      <div class="swiper-slide"><img src="images/galeria5.png" alt="Carro baja na corrida"></div>
-      <div class="swiper-slide"><img src="images/galeria6.png" alt="Carro baja em manutenção"></div>
+  <section id="galeria" class="galeria">
+    <div class="container">
+      <h2>Galeria do Projeto</h2>
+      <p>Imagens ilustrativas de protótipos e competições Baja SAE</p>
+      <br>
+      <div class="swiper galeria-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="images/galeria1.png" alt="Carro Baja em corrida com piloto"></div>
+          <div class="swiper-slide"><img src="images/galeria2.png" alt="Baja quase na linha de chegada"></div>
+          <div class="swiper-slide"><img src="images/galeria3.png" alt="Equipe e piloto pós-corrida"></div>
+          <div class="swiper-slide"><img src="images/galeria4.png" alt="Vários carros competindo na pista"></div>
+          <div class="swiper-slide"><img src="images/galeria5.png" alt="Carro baja na corrida"></div>
+          <div class="swiper-slide"><img src="images/galeria6.png" alt="Carro baja em manutenção"></div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
     </div>
-
-    <!-- Setas e bolinhas DENTRO da div.swiper -->
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
-</section>
-
+  </section>
 
   <!-- Sobre o Projeto -->
   <section id="sobre">
-    <h2>Sobre o Projeto</h2>
-    <div class="sobre-content">
-      <p>Este é um <strong>projeto acadêmico fictício</strong> desenvolvido por estudantes de Análise e Desenvolvimento de Sistemas do UniCuritiba como parte de um trabalho de disciplina. O objetivo principal é demonstrar conhecimentos em:</p>
-      <ul>
-        <li>Desenvolvimento web com HTML, CSS e JavaScript</li>
-        <li>Aplicação de cálculos técnicos automotivos</li>
-        <li>Design de interface focado em usabilidade</li>
-        <li>Compreensão dos fundamentos da competição Baja SAE</li>
-      </ul>
-      <p><strong>Importante:</strong> Este site não está vinculado a nenhuma equipe real de Baja SAE. É uma simulação prática criada exclusivamente para fins educacionais e avaliação acadêmica.</p>
+    <div class="container">
+      <h2>Sobre o Projeto</h2>
+      <div class="sobre-content">
+        <p>Este é um <strong>projeto acadêmico fictício</strong> desenvolvido por estudantes de Análise e Desenvolvimento de Sistemas do UniCuritiba como parte de um trabalho de disciplina. O objetivo principal é demonstrar conhecimentos em: <br> <br></p>
+        <ul>
+          <li>Desenvolvimento web com HTML, CSS e JavaScript</li>
+          <li>Aplicação de cálculos técnicos automotivos</li>
+          <li>Design de interface focado em usabilidade</li>
+          <li>Compreensão dos fundamentos da competição Baja SAE</li>
+        </ul>
+        <br>
+        <p><strong>Importante:</strong> Este site não está vinculado a nenhuma equipe real de Baja SAE. É uma simulação prática criada exclusivamente para fins educacionais e avaliação acadêmica.</p>
+      </div>
     </div>
   </section>
 
   <!-- Contato -->
   <section id="contato" class="contato">
-    <h2>Contato</h2>
-    <p>Envie uma mensagem sobre o projeto</p>
-    <form id="form-contato">
-      <label for="nome">Nome Completo</label>
-      <input type="text" id="nome" placeholder="Digite seu nome">
-      <label for="mensagem">Mensagem</label>
-      <textarea id="mensagem" placeholder="Digite sua mensagem"></textarea>
-      <button type="submit">Enviar Mensagem</button>
-    </form>
+    <div class="container">
+      <h2>Contato</h2>
+      <p>Envie uma mensagem sobre o projeto</p>
+      <form id="form-contato">
+        <label for="nome">Nome Completo</label>
+        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" required placeholder="Digite sua mensagem"></textarea>
+        <button type="submit">Enviar Mensagem</button>
+      </form>
+    </div>
   </section>
 
   <!-- Rodapé -->
   <footer>
-    <div>
+    <div class="container">
       <strong>Projeto Baja SAE - UniCuritiba</strong><br>
-      Trabalho acadêmico desenvolvido por estudantes de Análise e Desenvolvimento de Sistemas
-    </div>
-    <div>
+      Trabalho acadêmico desenvolvido por estudantes de Análise e Desenvolvimento de Sistemas<br>
       &copy; 2025 Trabalho Acadêmico – UniCuritiba – Análise e Desenvolvimento de Sistemas<br>
       Projeto simulado para fins educacionais
     </div>
@@ -143,8 +146,6 @@
       }
     });
   </script>
-  <!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  
+
 </body>
 </html>

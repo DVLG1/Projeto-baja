@@ -91,12 +91,12 @@ function calcPesoPotencia() {
 }
 
 function calcAceleracao() {
-  const v0 = parseFloat(document.getElementById("v0").value) / 3.6;
-  const v1 = parseFloat(document.getElementById("v1").value) / 3.6;
+  const v1 = parseFloat(document.getElementById("v1").value) / 3.6; // km/h para m/s
   const t = parseFloat(document.getElementById("tempo").value);
   const res = document.getElementById("res-acel");
-  if (t && !isNaN(v0) && !isNaN(v1)) {
-    const a = ((v1 - v0) / t).toFixed(2);
+
+  if (!isNaN(v1) && !isNaN(t) && t > 0) {
+    const a = (v1 / t).toFixed(2); // v = a * t → a = v / t
     res.textContent = `Aceleração: ${a} m/s²`;
   } else {
     res.textContent = "Dados inválidos.";
