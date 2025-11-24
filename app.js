@@ -86,7 +86,7 @@ function calcPesoPotencia() {
     const rel = (peso / pot).toFixed(2);
     res.textContent = `Relação: ${rel} kg/kW`;
   } else {
-    res.textContent = "Preencha os campos corretamente.";
+    res.textContent = "Preencha corretamente.";
   }
 }
 
@@ -99,7 +99,7 @@ function calcAceleracao() {
     const a = (v1 / t).toFixed(2); // v = a * t → a = v / t
     res.textContent = `Aceleração: ${a} m/s²`;
   } else {
-    res.textContent = "Dados inválidos.";
+    res.textContent = "Preencha corretamente.";
   }
 }
 
@@ -113,7 +113,7 @@ function calcVelocidadeFinal() {
     const velocidade = ((rpm * 2 * Math.PI * raio) / (relacao * 60)) * 3.6;
     res.textContent = `Velocidade Estimada: ${velocidade.toFixed(2)} km/h`;
   } else {
-    res.textContent = "Insira todos os valores corretamente.";
+    res.textContent = "Preencha corretamente.";
   }
 }
 
@@ -139,7 +139,7 @@ function calcFrenagem() {
     const d = (v * v) / (2 * mu * g);
     res.textContent = `Distância: ${d.toFixed(2)} metros`;
   } else {
-    res.textContent = "Valores inválidos.";
+    res.textContent = "Preencha corretamente.";
   }
 }
 
